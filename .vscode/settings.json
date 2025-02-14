@@ -1,0 +1,11 @@
+{"[javascriptreact]": {
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": false
+},
+"editor.formatOnSaveMode": "modifications",
+"editor.formatOnSave": true,
+"[**/src/components/App.jsx]": {
+  "editor.defaultFormatter": null,
+  "editor.formatOnSave": false
+}
+}
