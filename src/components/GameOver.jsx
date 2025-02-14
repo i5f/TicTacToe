@@ -1,19 +1,22 @@
-// instead of showing X won or O won, it would be better to show
-// the winner's name directly but taking that info from <Player />
-// component and putting it inside of this component would be
-// unnecessarily hard and since we're updating the player names at
-// every keystroke and if we put it into the <App /> component as
-// it is, it will reload the whole component at every keystroke and
-// this approach wouldn't be optimal in terms of performance. 
-// Although we still gonna keep the track of that state in the <App />
-// component, we will instead update the state when the user saves it.
+/**
+ * GameOver Component
+ * -------------------
+ * Displays the game result (winner or draw) and provides an option to restart.
+ *
+ * The winner's name is derived from the <App /> component to avoid unnecessary
+ * re-renders when the player name is updated at every keystroke.
+ * Instead, the state is updated only when the user saves the name,
+ * ensuring better performance.
+ */
 
 function GameOver({ winner, onRestart }) {
-  return <div id="game-over">
-    <h2>Game Over!</h2>
-    {winner ? <p>{winner} won!</p> : <p>It&apos;s a draw!</p>}
-    <p><button onClick={onRestart}>Rematch!</button></p>
-  </div>
+  return (
+    <div id="game-over">
+      <h2>Game Over!</h2>
+      {winner ? <p>{winner} won!</p> : <p>It&apos;s a draw!</p>}
+      <p><button onClick={onRestart}>Rematch!</button></p>
+    </div>
+  );
 }
 
 export default GameOver;
